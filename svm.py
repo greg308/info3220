@@ -1,6 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import pandas as pd
+
+from sklearn import svm
+import timeit
 
 import keras
 from keras.datasets import mnist
@@ -82,8 +84,7 @@ l_n_test = [(y_test[i], x) for i, x in enumerate(names_test)]
 
 print(l_n_test)
 
-from sklearn import svm
-import timeit
+
 
 t1 = timeit.default_timer()
 
