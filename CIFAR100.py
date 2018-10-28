@@ -14,6 +14,11 @@ import pickle
 import numpy as np
 import h5py
 
+# Choose number of classes and save the model
+num_classes = 100
+save_dir = os.path.join(os.getcwd(), 'saved_models')
+model_name = 'cifar100.h5'
+
 ##################################
 if True: 
   # Import the data, shuffled and split between train and test sets:
@@ -24,8 +29,8 @@ if True:
 ##################################
 
 # Convert class vectors to binary class matrices.
-y_train = keras.utils.to_categorical(y_train_scalar, num_classes)
-y_test = keras.utils.to_categorical(y_test_scalar, num_classes)
+y_train = keras.utils.to_categorical(y_train, num_classes)
+y_test = keras.utils.to_categorical(y_test, num_classes)
 
 x_train = x_train.astype('float32')
 x_test = x_test.astype('float32')
